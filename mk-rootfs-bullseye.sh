@@ -36,7 +36,8 @@ sudo cp -rpf packages/$ARCH/* $TARGET_ROOTFS_DIR/packages
 sudo cp -rpf overlay/* $TARGET_ROOTFS_DIR/
 
 # overlay-firmware folder
-sudo cp -rpf overlay-firmware/* $TARGET_ROOTFS_DIR/
+sudo rm -rf $TARGET_ROOTFS_DIR/usr/lib/firmware
+sudo cp -rf overlay-firmware/* $TARGET_ROOTFS_DIR/
 
 # overlay-debug folder
 # adb, video, camera  test file
