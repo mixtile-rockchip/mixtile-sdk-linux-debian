@@ -157,26 +157,26 @@ echo -e "\033[36m Install rktoolkit.................... \033[0m"
 # echo -e "\033[36m Install gl4es.................... \033[0m"
 # \${APT_INSTALL} /packages/gl4es/*.deb
 
-echo -e "\033[36m Install Chinese fonts.................... \033[0m"
+# echo -e "\033[36m Install Chinese fonts.................... \033[0m"
 # Uncomment zh_CN.UTF-8 for inclusion in generation
-sed -i 's/^# *\(zh_CN.UTF-8\)/\1/' /etc/locale.gen
-echo "LANG=zh_CN.UTF-8" >> /etc/default/locale
+# sed -i 's/^# *\(zh_CN.UTF-8\)/\1/' /etc/locale.gen
+# echo "LANG=zh_CN.UTF-8" >> /etc/default/locale
 
 # Generate locale
-locale-gen
+# locale-gen
 
 # Export env vars
-echo "export LC_ALL=zh_CN.UTF-8" >> ~/.bashrc
-echo "export LANG=zh_CN.UTF-8" >> ~/.bashrc
-echo "export LANGUAGE=zh_CN.UTF-8" >> ~/.bashrc
+# echo "export LC_ALL=zh_CN.UTF-8" >> ~/.bashrc
+# echo "export LANG=zh_CN.UTF-8" >> ~/.bashrc
+# echo "export LANGUAGE=zh_CN.UTF-8" >> ~/.bashrc
 
 source ~/.bashrc
 
-\${APT_INSTALL} ttf-wqy-zenhei fonts-aenigma
-\${APT_INSTALL} xfonts-intl-chinese
+# \${APT_INSTALL} ttf-wqy-zenhei fonts-aenigma
+# \${APT_INSTALL} xfonts-intl-chinese
 
 # HACK debian11.3 to fix bug
-\${APT_INSTALL} fontconfig --reinstall
+# \${APT_INSTALL} fontconfig --reinstall
 
 #\${APT_INSTALL} xfce4
 #ln -sf /usr/bin/startxfce4 /etc/alternatives/x-session-manager
