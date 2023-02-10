@@ -76,6 +76,11 @@ sed -i "s~\(^ExecStart=.*\)~# \1\nExecStart=-/bin/sh -c '/bin/bash -l </dev/%I >
 \${APT_INSTALL} pm-utils triggerhappy bsdmainutils
 cp /etc/Powermanager/triggerhappy.service  /lib/systemd/system/triggerhappy.service
 sed -i "s/#HandlePowerKey=.*/HandlePowerKey=ignore/" /etc/systemd/logind.conf
+mkdir -p /etc/triggerhappy/triggers.d/
+cp /etc/Powermanager/power-key.conf /etc/triggerhappy/triggers.d/
+cp /etc/Powermanager/power-key.sh /usr/bin/
+chmod 777 /usr/bin/power-key.sh
+rm /etc/Powermanager -rf
 
 #---------------Rga--------------
 \${APT_INSTALL} /packages/rga2/*.deb
@@ -169,11 +174,12 @@ echo -e "\033[36m Install rktoolkit.................... \033[0m"
 # echo "export LC_ALL=zh_CN.UTF-8" >> ~/.bashrc
 # echo "export LANG=zh_CN.UTF-8" >> ~/.bashrc
 # echo "export LANGUAGE=zh_CN.UTF-8" >> ~/.bashrc
-
 source ~/.bashrc
 
-# \${APT_INSTALL} ttf-wqy-zenhei fonts-aenigma
-# \${APT_INSTALL} xfonts-intl-chinese
+\${APT_INSTALL} ttf-wqy-zenhei fonts-aenigma
+\${APT_INSTALL} xfonts-intl-chinese
+
+\${APT_INSTALL} exfat-utils exfat-fuse
 
 # HACK debian11.3 to fix bug
 # \${APT_INSTALL} fontconfig --reinstall
