@@ -232,8 +232,14 @@ then
 fi
 cd -
 
+systemctl enable systemd-resolved.service
+
 rm -rf /var/lib/apt/lists/*
 rm -rf /var/cache/
 rm -rf /packages/
+
+sudo rm -rf /etc/resolv.conf
+sudo ln -snf /run/systemd/resolve/stub-resolv.conf \
+	/etc/resolv.conf
 
 EOF
