@@ -242,4 +242,5 @@ sudo rm -rf /etc/resolv.conf
 sudo ln -snf /run/systemd/resolve/stub-resolv.conf \
 	/etc/resolv.conf
 
+insserv assign-userdata.sh
 EOF
