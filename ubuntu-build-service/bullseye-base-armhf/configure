@@ -24,7 +24,7 @@ lb config \
  --backports false \
  --binary-filesystem ext4 \
  --binary-images tar \
- --bootappend-live "hostname=blade3 username=mixtile" \
+ --bootappend-live "hostname=mixtile username=mixtile" \
  --bootloader "syslinux" \
  --bootstrap-qemu-arch armhf \
  --bootstrap-qemu-static /usr/bin/qemu-arm-static \
