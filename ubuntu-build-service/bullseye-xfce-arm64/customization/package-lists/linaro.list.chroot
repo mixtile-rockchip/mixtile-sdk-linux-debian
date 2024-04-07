@@ -207,3 +207,11 @@ zip
 #desktop-base
 systemd-sysv
 zathura
+feh
+xdotool
+qrencode
+stress-ng
+zbar-tools
+fio
+evtest
+imagemagick
