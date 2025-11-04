@@ -1,0 +1,2 @@
+packages/armhf/chromium/chromium-x11_132.0.6834.83_armhf.deb filter=lfs diff=lfs merge=lfs -text
+packages/arm64/chromium/chromium-x11_132.0.6834.83_arm64.deb filter=lfs diff=lfs merge=lfs -text
